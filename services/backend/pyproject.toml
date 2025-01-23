@@ -1,0 +1,99 @@
+[tool.poetry]
+name = "aqua"
+version = "0.1.0"
+description = "Application for tracking your water balance"
+authors = ["emptybutton <88573504+emptybutton@users.noreply.github.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+
+[tool.poetry.group.aqua.dependencies]
+typenv = "^0.2.0"
+dishka = "^1.4.0"
+structlog = "^24.4.0"
+rich = "^13.7.1"
+result = "^0.17.0"
+pymongo = "^4.10.1"
+
+[tool.poetry.group.aqua-dev.dependencies]
+mypy = {extras = ["faster-cache"], version = "^1.13.0"}
+ruff = "^0.7.2"
+pytest = "^8.3.2"
+pytest-asyncio = "^0.23.8"
+
+[tool.poetry.group.auth.dependencies]
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.32"}
+alembic = "^1.13.2"
+typenv = "^0.2.0"
+asyncpg = "^0.30.0"
+dishka = "^1.4.0"
+structlog = "^24.4.0"
+rich = "^13.7.1"
+result = "^0.17.0"
+
+[tool.poetry.group.auth-dev.dependencies]
+mypy = {extras = ["faster-cache"], version = "^1.13.0"}
+ruff = "^0.7.2"
+
+[tool.poetry.group.entrypoint.dependencies]
+fastapi = "^0.115.2"
+typenv = "^0.2.0"
+uvicorn = "^0.30.6"
+structlog = "^24.4.0"
+rich = "^13.7.1"
+
+[tool.poetry.group.entrypoint-dev.dependencies]
+mypy = {extras = ["faster-cache"], version = "^1.13.0"}
+ruff = "^0.7.2"
+pytest = "^8.3.2"
+pytest-asyncio = "^0.23.8"
+dirty-equals = "^0.8.0"
+httpx = "^0.27.2"
+
+[tool.poetry.group.fix.dependencies]
+certifi = "^2024.7.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+strict = true
+no_namespace_packages = true
+
+[tool.ruff]
+src = ["src"]
+preview = true
+line-length = 80
+indent-width = 4
+
+[tool.ruff.lint]
+select = [
+    "ANN", "F", "W", "E", "B", "C90", "N", "UP", "YTT", "ASYNC", "PL", "RUF",
+    "Q", "RET", "SLF", "SLOT", "SIM", "TID252", "TCH", "ARG", "PTH", "ERA", "TRY",
+    "PERF", "INP", "I", "S", "FAST", "TID", "TCH", "INT"
+]
+ignore = [
+    "ANN101", "ANN102", "N818", "RUF009", "UP018", "PLR6301", "PLR0913", "PLW0108"
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["PLC0414"]
+"*/cases/*" = ["PLR0911"]
+"src/entrypoint/logic/services/*" = ["PLR0917"]
+"*/usecases/*" = ["PLR0911"]
+"*/adapters/*" = ["ARG002", "S101"]
+"*/domain/*" = ["PLR2004"]
+"src/entrypoint/presentation/fastapi/controllers/routes/*" = ["PLR0911"]
+"*/tests/*" = ["PLR2004", "S101"]
+"*/conftest.py" = ["F403"]
+"*/fixtures/*" = ["F403"]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+asyncio_mode = "auto"

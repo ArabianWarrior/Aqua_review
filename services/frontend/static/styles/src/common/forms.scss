@@ -1,0 +1,9 @@
+@use "colors" as colors;
+
+.valid-form-field {
+  background-color: colors.$ok-non-interaction-color;
+}
+
+.valid-form-field:focus {
+  color: colors.$ok-color;
+}

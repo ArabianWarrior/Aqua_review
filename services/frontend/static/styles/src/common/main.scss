@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "colors";
+
+body * {
+  font-family: "Nunito";
+}
+
+::selection {
+  background-color: $neutral-color;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: $neutral-color;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+a:hover {
+  font-weight: 600
+}
+
+input, textarea {
+  background-color: $default-non-interaction-color;
+  border: 0;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input:focus, textarea:focus {
+  background-color: $default-interaction-color;
+  color: $neutral-color;
+  outline: none;
+}
+
+input {
+  width: 230px;
+  height: 22px;
+}
+
+button {
+  background-color: $neutral-color;
+  color: white;
+  border: solid 1px $neutral-color;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 15px;
+  height: 26px;
+}
+
+button:active {
+  background-color: $default-interaction-color;
+  border: solid 1px $default-interaction-bordering-color;
+  color: $neutral-color;
+}
+
+.ok-button {
+  background-color: $ok-color;
+  border: solid 1px $ok-bordering-color;
+  text-decoration: line-through;
+}
+
+.ok-button:active {
+  color: $ok-color;
+}
+
+.bad-button {
+  background-color: $bad-color;
+  border: solid 1px $bad-non-interaction-bordering-color;
+  text-decoration: line-through;
+}
+
+.bad-button:active {
+  color: $bad-color;
+}
+
+@mixin horizontally-centered {
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.center {
+  @include horizontally-centered;
+  position: relative;
+  width: min-content;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="static/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/styles/pages/sign-up.css">
+    <title>Aqua</title>
+</head>
+<body>
+    <div class="center">
+        <div id="registration-form">
+            <div id="header">
+                <img id="registration-icon" src="static/images/user.png" width="130" height="130">
+                <h1 id="form-title">Новый аккаунт</h1>
+            </div>
+            <div id="inputs">
+                <p><input id="input-name" type="text" autocomplete="username" placeholder="Имя"></p>
+                <p><input id="input-password" type="password" autocomplete="new-password" placeholder="Пароль"></p>
+                <p><input id="input-weight-kilograms" type="number" placeholder="Вес"></p>
+                <p><input id="input-target-water-balance-milliliters" type="number" placeholder="Цель"></p>
+                <p><input id="input-glass-milliliters" type="number" placeholder="Стакан"></p>
+            </div>
+            <div id="transition-menu">
+                <div id="buttons">
+                    <button id="sign-up-button">Создать</button>
+                </div>
+                <div id="links">
+                    <a id="authorization-link" href="/sign-in">У меня уже есть аккаунт</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="notification" class="default-neutral-notification">
+        <div id="notification-text" class="default-notification-text">
+            Цель может быть посчитана из вашего веса, поэтому можете не вводить её, если ввели вес
+        </div>
+        <img id="notification-close-button" class="default-notification-close-button" height="22" width="22" src="static/images/close-button.png">
+    </div>
+    <script type="module" src="static/scripts/presentation/periphery/browser/entrypoints/sign-up.js"></script>
+</body>
+</html>

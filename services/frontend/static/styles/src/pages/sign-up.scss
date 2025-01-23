@@ -1,0 +1,26 @@
+@import "../common/main";
+@import "../common/forms";
+@import "../common/notifications";
+
+#registration-icon {
+  @include horizontally-centered;
+  position: relative;
+  margin-top: 20px;
+}
+
+#form-title {
+  font-size: 31px;
+}
+
+#buttons {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#sign-up-button {
+  width: 80px;
+}
+
+#links {
+  text-align: center;
+}
