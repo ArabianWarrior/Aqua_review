@@ -12,6 +12,7 @@ ___
 2. запустите все сервисы
 3. установите структуру таблиц `Postgres`
 4. инициализируйте кластер `MongoDB`
+5. 5
 
 ```bash
 git clone https://github.com/emptybutton/Aqua.git
